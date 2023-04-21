@@ -10,24 +10,24 @@
 
 const week_day = document.querySelectorAll('.day');
 const calculated_cost = document.getElementById("calculated-cost");
-let total = 0
+let total = 0;
 
 week_day.forEach(item => {
   item.addEventListener('click', () => {
     item.classList.toggle('clicked');
-    total = calculate_total_cost()
-    calculated_cost.innerHTML = total
+    total = calculate_total_cost();
+    calculated_cost.innerHTML = total;
   });
 });
 
 function getSelectedDays() {
-    let days = 0
+    let days = 0;
     for (let i = 0; i < week_day.length; i++) {
       if (week_day[i].classList.contains('clicked')) {
-        days++
+        days++;
       }
     }
-    return days
+    return days;
 }
 
 /********* clear days *********/
@@ -35,9 +35,9 @@ function getSelectedDays() {
 
 const clear_days = document.getElementById("clear-button");
 clear_days.addEventListener('click', () => {
-    calculated_cost.innerHTML = 0
+    calculated_cost.innerHTML = 0;
     week_day.forEach(item => {
-        item.classList.remove("clicked")
+        item.classList.remove("clicked");
       });
 });
 
@@ -51,8 +51,8 @@ const halfSpan = document.getElementById('half');
 halfSpan.addEventListener('click', () => {
     halfSpan.classList.add('clicked');
     fullSpan.classList.remove('clicked');
-    total = calculate_total_cost()
-    calculated_cost.innerHTML = total
+    total = calculate_total_cost();
+    calculated_cost.innerHTML = total;
 });
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
@@ -62,8 +62,8 @@ const fullSpan = document.getElementById('full');
 fullSpan.addEventListener('click', () => {
     fullSpan.classList.add('clicked');
     halfSpan.classList.remove('clicked');
-    total = calculate_total_cost()
-    calculated_cost.innerHTML = total
+    total = calculate_total_cost();
+    calculated_cost.innerHTML = total;
 });
 
 function getSelectedTime() {
@@ -78,12 +78,12 @@ function getSelectedTime() {
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 
 function calculate_total_cost(){
-    let total_cost = 0
-    let days = getSelectedDays()
+    let total_cost = 0;
+    let days = getSelectedDays();
     if(getSelectedTime() == "full") {
-        total_cost = days * 35
+        total_cost = days * 35;
     } else {
-        total_cost = days * 20
+        total_cost = days * 20;
     } 
-    return total_cost
+    return total_cost;
   }
