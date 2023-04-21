@@ -103,6 +103,8 @@ header{
 h1{
     text-align: center;
     margin-top: 40px;
+    margin-right: 50px;
+    
 }
 
 main{
@@ -122,7 +124,7 @@ footer{
     height: 100px;
     margin-top: 25px;
     margin-bottom: 25px;
-    margin-left: 25px;
+    padding-right: 80px;
 }
 
 
@@ -138,8 +140,9 @@ footer{
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
 
-.flex{
+.flex-header{
 display: flex;
+justify-content: space-around;
 }
 
 .bulldog{
